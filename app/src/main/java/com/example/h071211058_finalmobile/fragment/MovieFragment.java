@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.h071211058_finalmobile.DetailLikedMovie;
 import com.example.h071211058_finalmobile.activity.DetailMovie;
 import com.example.h071211058_finalmobile.R;
 import com.example.h071211058_finalmobile.adapter.MovieAdapter;
@@ -48,9 +49,9 @@ public class MovieFragment extends Fragment {
         movieAdapter.setOnSelectData(new MovieAdapter.onSelectData() {
             @Override
             public void onSelected(MovieDiscoverResultsItem movieDiscoverResultsItem) {
-                Intent intent = new Intent(getActivity(), DetailMovie.class);
-                intent.putExtra("EXTRA_MOVIE", movieDiscoverResultsItem);
-                startActivity(intent);
+                Intent intent1 = new Intent(getActivity(), DetailMovie.class);
+                intent1.putExtra("EXTRA_MOVIE", movieDiscoverResultsItem);
+                startActivity(intent1);
             }
         });
         movieAdapter.notifyDataSetChanged();

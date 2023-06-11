@@ -10,8 +10,6 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "favorite_movie")
 public class MovieModel implements Parcelable {
-
-
     @ColumnInfo(name = "category")
     private String category;
 

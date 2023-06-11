@@ -15,8 +15,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.h071211058_finalmobile.DetailLikedMovie;
+import com.example.h071211058_finalmobile.DetailLikedTvshow;
 import com.example.h071211058_finalmobile.R;
 import com.example.h071211058_finalmobile.adapter.LikedAdapter;
+import com.example.h071211058_finalmobile.adapter.LikedTvshowAdapter;
 import com.example.h071211058_finalmobile.db.AppDatabase;
 import com.example.h071211058_finalmobile.db.MovieModel;
 
@@ -24,8 +26,12 @@ import java.util.ArrayList;
 
 public class LikedFragment extends Fragment {
     private ArrayList<MovieModel> listLiked = new ArrayList<>();
+    private ArrayList<MovieModel> tvShowLiked = new ArrayList<>();
+
+
     private AppDatabase appDatabase;
     private LikedAdapter likedAdapter;
+    private LikedTvshowAdapter likedTvshowAdapter;
     RecyclerView rv_liked;
 
     public LikedFragment(){
@@ -53,7 +59,10 @@ public class LikedFragment extends Fragment {
         }
 
         listLiked.addAll(appDatabase.movieDAO().getByCategory("movie"));
+        tvShowLiked.addAll(appDatabase.movieDAO().getByCategory("tvshow"));
+
         likedAdapter = new LikedAdapter(getContext());
+        likedTvshowAdapter = new LikedTvshowAdapter(getContext());
         likedAdapter.setOnSelectData(new LikedAdapter.onSelectData() {
             @Override
             public void onSelected(MovieModel movieModelDB) {
@@ -62,11 +71,23 @@ public class LikedFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        likedTvshowAdapter.setOnSelectData(new LikedTvshowAdapter.onSelectData() {
+            @Override
+            public void onSelected(MovieModel movieModelDB) {
+                Intent intent = new Intent(getActivity(), DetailLikedTvshow.class);
+                intent.putExtra("EXTRA_LIKED", movieModelDB);
+                startActivity(intent);
+            }
+        });
 
         likedAdapter.notifyDataSetChanged();
         likedAdapter.setData(listLiked);
 
+        likedTvshowAdapter.notifyDataSetChanged();
+        likedTvshowAdapter.setData(tvShowLiked);
+
         rv_liked.setAdapter(likedAdapter);
+        rv_liked.setAdapter(likedTvshowAdapter);
 
     }
 

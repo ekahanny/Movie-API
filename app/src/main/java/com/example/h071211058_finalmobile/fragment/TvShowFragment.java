@@ -42,8 +42,6 @@ public class TvShowFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-
         tvshowAdapter = new TvshowAdapter(getContext());
         tvshowAdapter.setOnSelectData(new TvshowAdapter.onSelectData() {
             @Override

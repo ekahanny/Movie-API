@@ -13,32 +13,30 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.h071211058_finalmobile.activity.DetailMovie;
-import com.example.h071211058_finalmobile.activity.MainActivity;
 import com.example.h071211058_finalmobile.db.AppDatabase;
 import com.example.h071211058_finalmobile.db.MovieModel;
 import com.example.h071211058_finalmobile.model.MovieDiscoverResultsItem;
+import com.example.h071211058_finalmobile.model.TvshowItem;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-public class DetailLikedMovie extends AppCompatActivity {
+public class DetailLikedTvshow extends AppCompatActivity {
+
     private static String BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w185/";
     boolean isFavorite = false;
     FloatingActionButton btn_back, btn_like;
     ImageView iv_poster, iv_backdrop;
     TextView tv_title, tv_release, tv_rating, tv_sinopsis;
     MovieModel movieModel;
-    MovieDiscoverResultsItem movieDiscoverResultsItem;
+    TvshowItem tvshowItem;
     private AppDatabase appDatabase;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_liked_movie);
+        setContentView(R.layout.activity_detail_liked_tvshow);
         btn_back = findViewById(R.id.btn_back);
         btn_like = findViewById(R.id.btn_like);
         iv_poster = findViewById(R.id.iv_poster);
@@ -47,7 +45,6 @@ public class DetailLikedMovie extends AppCompatActivity {
         tv_release = findViewById(R.id.tv_release);
         tv_rating = findViewById(R.id.tv_rating);
         tv_sinopsis = findViewById(R.id.tv_sinopsis);
-
         Intent intent = getIntent();
         if (intent.getParcelableExtra("EXTRA_LIKED") != null){
             movieModel = (MovieModel) intent.getParcelableExtra("EXTRA_LIKED");
@@ -119,7 +116,7 @@ public class DetailLikedMovie extends AppCompatActivity {
             movieModel.setPosterPath(movieModel.getPosterPath());
             movieModel.setOverview(movieModel.getOverview());
             movieModel.setVoteAverage(movieModel.getVoteAverage());
-            movieModel.setCategory("movie");
+            movieModel.setCategory("tvshow");
 
             appDatabase.movieDAO().deleteMovie(movieModel);
             Toast.makeText(getApplicationContext(), "DELETE FROM FAVORITE", Toast.LENGTH_SHORT).show();
@@ -140,7 +137,7 @@ public class DetailLikedMovie extends AppCompatActivity {
             movieModel.setPosterPath(movieModel.getPosterPath());
             movieModel.setOverview(movieModel.getOverview());
             movieModel.setVoteAverage(movieModel.getVoteAverage());
-            movieModel.setCategory("movie");
+            movieModel.setCategory("tvshow");
 
             appDatabase.movieDAO().insertMovie(movieModel);
 
