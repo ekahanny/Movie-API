@@ -6,11 +6,39 @@
     android:backgroundTint="@color/black"
     tools:context=".fragment.MovieFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_movies"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:listitem="@layout/movies_layout"
-        android:padding="10dp"/>
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_internet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please check your internet connection"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            android:visibility="gone"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_movies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/movies_layout"
+            android:padding="10dp"/>
+
+
+    </RelativeLayout>
+
+
+
 
 </FrameLayout>

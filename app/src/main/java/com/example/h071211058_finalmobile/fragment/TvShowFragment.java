@@ -11,9 +11,13 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.h071211058_finalmobile.R;
 import com.example.h071211058_finalmobile.activity.DetailTvShow;
@@ -27,6 +31,9 @@ public class TvShowFragment extends Fragment {
     RecyclerView rv_tv_show;
     private TvshowAdapter tvshowAdapter;
     private TvshowViewModel tvshowViewModel;
+    ProgressBar progressBar;
+    TextView tv_internet;
+    private Handler handler;
 
     public TvShowFragment() {
         // Required empty public constructor
@@ -41,6 +48,8 @@ public class TvShowFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        progressBar = view.findViewById(R.id.progressBar);
+        tv_internet = view.findViewById(R.id.tv_internet);
 
         tvshowAdapter = new TvshowAdapter(getContext());
         tvshowAdapter.setOnSelectData(new TvshowAdapter.onSelectData() {
@@ -55,6 +64,8 @@ public class TvShowFragment extends Fragment {
 
         rv_tv_show = view.findViewById(R.id.rv_tv_show);
         rv_tv_show.setLayoutManager(new GridLayoutManager(getContext(), 2));
+
+        handler = new Handler(Looper.getMainLooper());
 
         tvshowViewModel = new ViewModelProvider(this).get(TvshowViewModel.class);
         tvshowViewModel.setTvshowDiscover();

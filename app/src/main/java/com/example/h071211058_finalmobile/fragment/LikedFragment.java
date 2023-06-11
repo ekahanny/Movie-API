@@ -55,7 +55,6 @@ public class LikedFragment extends Fragment {
 
         if (this.appDatabase == null) {
             appDatabase = AppDatabase.initDatabase(getContext());
-            Log.d("TabMovieFragment", "init appDatabase");
         }
 
         listLiked.addAll(appDatabase.movieDAO().getByCategory("movie"));
