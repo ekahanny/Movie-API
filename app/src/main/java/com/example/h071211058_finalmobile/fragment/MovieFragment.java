@@ -15,7 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.h071211058_finalmobile.DetailMovie;
+import com.example.h071211058_finalmobile.activity.DetailMovie;
 import com.example.h071211058_finalmobile.R;
 import com.example.h071211058_finalmobile.adapter.MovieAdapter;
 import com.example.h071211058_finalmobile.model.MovieDiscoverResultsItem;

@@ -18,7 +18,7 @@
             android:name=".activity.DetailTvShow"
             android:exported="false" />
         <activity
-            android:name=".DetailMovie"
+            android:name=".activity.DetailMovie"
             android:exported="false" />
         <activity
             android:name=".activity.MainActivity"

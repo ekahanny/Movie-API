@@ -9,8 +9,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "favorite_movie")
-public class MovieModelDB implements Parcelable {
-
+public class MovieModel implements Parcelable {
 
     @ColumnInfo(name = "category")
     private String category;
@@ -94,10 +93,10 @@ public class MovieModelDB implements Parcelable {
         dest.writeInt(this.id);
     }
 
-    public MovieModelDB() {
+    public MovieModel() {
     }
 
-    protected MovieModelDB(Parcel in) {
+    protected MovieModel(Parcel in) {
         this.overview = in.readString();
         this.title = in.readString();
         this.posterPath = in.readString();
@@ -105,21 +104,21 @@ public class MovieModelDB implements Parcelable {
         this.id = in.readInt();
     }
 
-    public static final Parcelable.Creator<MovieModelDB> CREATOR = new Parcelable.Creator<MovieModelDB>() {
+    public static final Parcelable.Creator<MovieModel> CREATOR = new Parcelable.Creator<MovieModel>() {
         @Override
-        public MovieModelDB createFromParcel(Parcel source) {
-            return new MovieModelDB(source);
+        public MovieModel createFromParcel(Parcel source) {
+            return new MovieModel(source);
         }
 
         @Override
-        public MovieModelDB[] newArray(int size) {
-            return new MovieModelDB[size];
+        public MovieModel[] newArray(int size) {
+            return new MovieModel[size];
         }
     };
 
 
-    public static MovieModelDB fromContentValues(ContentValues values) {
-        final MovieModelDB movie = new MovieModelDB();
+    public static MovieModel fromContentValues(ContentValues values) {
+        final MovieModel movie = new MovieModel();
         if (values.containsKey("id")) {
             movie.id = values.getAsInteger("id");
         }
