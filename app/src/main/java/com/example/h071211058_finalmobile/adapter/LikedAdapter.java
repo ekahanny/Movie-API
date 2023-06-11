@@ -12,12 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.h071211058_finalmobile.R;
-import com.example.h071211058_finalmobile.db.MovieModelDB;
+import com.example.h071211058_finalmobile.db.MovieModel;
 
 import java.util.ArrayList;
 
 public class LikedAdapter extends RecyclerView.Adapter<LikedAdapter.ViewHolder> {
-    private ArrayList<MovieModelDB> items = new ArrayList<>();
+    private ArrayList<MovieModel> items = new ArrayList<>();
     private static String BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w185/";
     private Context context;
     private LikedAdapter.onSelectData onSelectData;
@@ -28,14 +28,14 @@ public class LikedAdapter extends RecyclerView.Adapter<LikedAdapter.ViewHolder> 
     }
 
     public interface onSelectData {
-        void onSelected(MovieModelDB movieModelDB);
+        void onSelected(MovieModel movieModelDB);
     }
     public void setOnSelectData(LikedAdapter.onSelectData onSelectData) {
 
         this.onSelectData = onSelectData;
     }
 
-    public void setData(ArrayList<MovieModelDB> item) {
+    public void setData(ArrayList<MovieModel> item) {
         items.clear();
         items.addAll(item);
         notifyDataSetChanged();
@@ -50,7 +50,7 @@ public class LikedAdapter extends RecyclerView.Adapter<LikedAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull LikedAdapter.ViewHolder holder, int position) {
-        final MovieModelDB movieItem = items.get(position);
+        final MovieModel movieItem = items.get(position);
 
         Glide.with(context).load(BASE_IMAGE_URL+movieItem.getPosterPath())
                 .into(holder.iv_poster);

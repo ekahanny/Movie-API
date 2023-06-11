@@ -13,13 +13,13 @@ import java.util.List;
 public interface MovieDAO {
 
     @Insert
-    void insertMovie(MovieModel MovieModel);
+    void insertMovie(MovieModel movieModelDb);
 
     @Query("SELECT * FROM favorite_movie")
     List<MovieModel> getMovieDb();
 
     @Delete
-    void deleteMovie(MovieModel MovieModel);
+    void deleteMovie(MovieModel movieModelDb);
 
     @Query("SELECT * FROM favorite_movie WHERE id = :idMovie LIMIT 1")
     List<MovieModel> getById(int idMovie);
@@ -36,7 +36,7 @@ public interface MovieDAO {
     long[] insertAll(MovieModel[] movie);
 
     @Insert
-    long insert(MovieModel MovieModel);
+    long insert(MovieModel movieModelDb);
 
     @Query("SELECT * FROM favorite_movie")
     Cursor getAllMovie();

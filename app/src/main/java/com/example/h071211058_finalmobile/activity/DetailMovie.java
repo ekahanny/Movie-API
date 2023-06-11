@@ -31,7 +31,6 @@ public class DetailMovie extends AppCompatActivity {
     ImageView iv_poster, iv_backdrop;
     TextView tv_title, tv_release, tv_rating, tv_sinopsis;
     MovieDiscoverResultsItem movieDiscoverResultsItem;
-    MovieModel movieModel;
     private AppDatabase appDatabase;
 
 
