@@ -6,6 +6,7 @@
     android:layout_height="270dp"
     app:cardCornerRadius="4dp"
     app:cardElevation="10dp"
+    android:backgroundTint="#680303"
     android:layout_margin="15dp">
 
     <LinearLayout
@@ -36,7 +37,7 @@
                 android:fontFamily="@font/alata"
                 android:gravity="center"
                 android:text="Movie Title"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -48,7 +49,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/alata"
                 android:text="Year"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
 
 
 

@@ -8,7 +8,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/black">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_like"
@@ -68,12 +69,14 @@
             android:layout_marginStart="17dp"
             android:layout_marginEnd="17dp"
             android:layout_marginBottom="284dp"
-            app:cardElevation="15dp"
-            android:backgroundTint="@color/white">
+            android:backgroundTint="#601717"
+            app:cardElevation="15dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:backgroundTint="#601717"
+
                 android:orientation="vertical">
 
                 <TextView
@@ -86,7 +89,7 @@
                     android:layout_marginBottom="15dp"
                     android:fontFamily="@font/alata"
                     android:text="Movie's Title"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -96,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/alata"
                     android:text="Release Date"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="15sp"
                     android:layout_below="@id/tv_title"
                     android:layout_marginTop="-7dp"
@@ -106,7 +109,7 @@
                     android:id="@+id/iv_star"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="165dp"
+                    android:layout_marginStart="145dp"
                     android:layout_marginTop="65dp"
                     android:layout_toEndOf="@id/tv_release"
                     android:src="@drawable/baseline_star_24" />
@@ -116,14 +119,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_release"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="5dp"
                     android:layout_marginTop="-8dp"
                     android:layout_marginEnd="9dp"
                     android:layout_marginBottom="9dp"
                     android:layout_toEndOf="@id/iv_star"
                     android:fontFamily="@font/alata"
                     android:text="Rating"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="15sp" />
 
             </RelativeLayout>
@@ -137,6 +140,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             app:cardElevation="15dp"
+            android:backgroundTint="#601717"
             app:cardCornerRadius="15dp">
 
 
@@ -146,7 +150,7 @@
                 android:text="Synopsis"
                 android:layout_margin="15dp"
                 android:fontFamily="@font/alata"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="16dp"/>
 
@@ -159,12 +163,11 @@
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="15dp"
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                android:textColor="@color/black"/>
+                android:textColor="@color/white"/>
 
         </androidx.cardview.widget.CardView>
 
 
     </RelativeLayout>
-
 
 </ScrollView>

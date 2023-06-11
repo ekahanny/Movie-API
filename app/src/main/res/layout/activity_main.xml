@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".activity.MainActivity">
 
     <RelativeLayout
@@ -14,7 +15,7 @@
             android:id="@+id/cv_action_bar"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            app:cardBackgroundColor="#7AB4DC">
+            app:cardBackgroundColor="#601717">
 
             <TextView
                 android:id="@+id/tv_header"
@@ -34,13 +35,14 @@
             android:layout_below="@id/cv_action_bar"
             android:layout_above="@id/cv_bottom_navigation"
             android:layout_width="match_parent"
-            android:layout_height="650dp"/>
+            android:layout_height="650dp"
+            android:backgroundTint="@color/black"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            app:cardBackgroundColor="#7AB4DC"
+            app:cardBackgroundColor="#601717"
             android:layout_alignParentBottom="true">
 
             <LinearLayout

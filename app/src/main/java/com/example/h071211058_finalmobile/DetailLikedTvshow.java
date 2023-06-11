@@ -59,7 +59,6 @@ public class DetailLikedTvshow extends AppCompatActivity {
 //                String backdrop = movieDiscoverResultsItem.getBackdropPath();
 
                 tv_title.setText(title);
-                tv_release.setVisibility(View.GONE);
 //                tv_release.setText(String.valueOf(releaseYear));
                 tv_sinopsis.setText(sinopsis);
                 tv_rating.setText(String.valueOf(rating));
@@ -68,7 +67,7 @@ public class DetailLikedTvshow extends AppCompatActivity {
                 Glide.with(this).load(BASE_IMAGE_URL + poster)
                         .into(iv_poster);
 
-                iv_backdrop.setVisibility(View.GONE);
+
 //                Glide.with(this).load(BASE_IMAGE_URL + backdrop)
 //                        .into(iv_backdrop);
 

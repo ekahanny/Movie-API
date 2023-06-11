@@ -52,7 +52,7 @@ public class DetailTvShow extends AppCompatActivity {
             tvshowItem = (TvshowItem) intent.getParcelableExtra("EXTRA_TVSHOW");
 
             if (tvshowItem != null){
-                String title = tvshowItem.getOriginalName();
+                String title = tvshowItem.getName();
 
                 LocalDate localDate = LocalDate.parse(tvshowItem.getFirstAirDate(), DateTimeFormatter.ISO_LOCAL_DATE);
                 int releaseYear = localDate.getYear();

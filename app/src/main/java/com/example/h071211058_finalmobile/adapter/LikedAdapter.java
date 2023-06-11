@@ -56,6 +56,7 @@ public class LikedAdapter extends RecyclerView.Adapter<LikedAdapter.ViewHolder> 
                 .into(holder.iv_poster);
         holder.tv_title.setText(movieItem.getTitle());
         holder.tv_year.setText(String.valueOf(movieItem.getVoteAverage()));
+        holder.iv_keterangan.setImageResource(R.drawable.baseline_movie_24);
 
         holder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +75,7 @@ public class LikedAdapter extends RecyclerView.Adapter<LikedAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tv_title, tv_year;
-        ImageView iv_poster;
+        ImageView iv_poster, iv_keterangan;
         CardView cv;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -82,6 +83,7 @@ public class LikedAdapter extends RecyclerView.Adapter<LikedAdapter.ViewHolder> 
             tv_year = itemView.findViewById(R.id.tv_year);
             iv_poster = itemView.findViewById(R.id.iv_poster);
             cv = itemView.findViewById(R.id.cv);
+            iv_keterangan = itemView.findViewById(R.id.iv_keterangan);
         }
     }
 }
